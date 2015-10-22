@@ -3,3 +3,4 @@ fasta_filter/*.fasta
 fasta_prefilter/*.fasta
 fasta_prefilter/*.fa
 *.temp
+sge/*
