@@ -8,6 +8,6 @@
 
 
 FILE=$(cat command.temp | head -n $SGE_TASK_ID | tail -n 1)
-cd /home/acantu/metagenomes/ensambles/ensambles_elegidos/
 
-$FILE
+sh -c "/usr/local/blast+/bin/${FILE}"
+
