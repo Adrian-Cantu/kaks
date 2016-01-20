@@ -4,3 +4,7 @@ fasta_prefilter/*.fasta
 fasta_prefilter/*.fa
 *.temp
 sge/*
+result_tblastx/*.tblastx
+*.swp
+in_metagenome/*.fa
+in_metagenome/*.fasta
