@@ -1,7 +1,8 @@
 
 
 all:
-	qsub -cwd -e sge -o sge -t 1-87 ./tblastx_qsub.sh
+	echo 'need a command'
+	cat makefile
 
 test3:
 	qsub -cwd -e sge -o sge -t 1-3 ./tblastx_qsub.sh
@@ -9,8 +10,13 @@ test3:
 test:
 	qsub -q important -cwd  -e sge -o sge ./tblastx_qsub.temp
 
+test_single: single_job_submmit.temp
+	qsub -q important -cwd  -e sge -o sge ./single_job_submmit.temp
+
 clean:
 	rm sge/*
+	rm *.temp
 
-commands:
-	./run_paired_tblastx_ram.sh > command.temp
+commands: print_command_paired_tblastx_ant.sh
+	print_command_paired_tblastx_ant.sh > command.temp
+	cat command.temp | command2singlejob.pl > single_job_submmit.temp
