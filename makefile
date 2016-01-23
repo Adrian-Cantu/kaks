@@ -4,6 +4,9 @@ all:
 	echo 'need a command'
 	cat makefile
 
+tblastx2axt_qsub: tblastx2axt_qsub.sh command_tblastx2axt.temp
+	qsub -cwd -e sge -o sge -t 1-10 ./tblastx2axt_qsub.sh
+
 test3:
 	qsub -cwd -e sge -o sge -t 1-3 ./tblastx_qsub.sh
 
@@ -20,3 +23,4 @@ clean:
 commands: print_command_paired_tblastx_ant.sh
 	print_command_paired_tblastx_ant.sh > command.temp
 	cat command.temp | command2singlejob.pl > single_job_submmit.temp
+	./print_command_paired_tblastx2axt_ant.sh > command_tblastx2axt.temp

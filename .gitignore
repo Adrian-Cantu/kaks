@@ -8,3 +8,5 @@ result_tblastx/*.tblastx
 *.swp
 in_metagenome/*.fa
 in_metagenome/*.fasta
+out_tblastx/*.tblastx
+axt/*.axt
