@@ -11,3 +11,6 @@ in_metagenome/*.fasta
 out_tblastx/*.tblastx
 axt/*.axt
 result_kaks/*.kaks
+cat_axt/
+cat_log_kaks/
+cat_result_kaks/

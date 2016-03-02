@@ -4,6 +4,9 @@ all:
 	echo 'need a command'
 	cat makefile
 
+axt2cat: axt2axtcat.pl
+	ls axt | xargs -I{} -t  sh -c './axt2axtcat.pl axt/{} > cat_axt/{}'
+
 tblastx2axt_qsub: tblastx2axt_qsub.sh command_tblastx2axt.temp
 	qsub -cwd -e sge -o sge -t 1-10 ./tblastx2axt_qsub.sh
 
